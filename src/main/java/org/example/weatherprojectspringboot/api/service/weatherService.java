@@ -33,35 +33,6 @@ public class weatherService {
     static final Map<String, String> cityCodeMap = new HashMap<>();
 
     static {
-//        JSONParser parser = new JSONParser();
-//
-//        try {
-//            // Path to the JSON file
-//            FileReader reader = new FileReader("/Users/leeowen/Projects/weather-project-springboot/package.json");
-//
-//            // Parse the JSON file
-//            JSONObject jsonObject = (JSONObject) parser.parse(reader);
-//
-//            // Get the array for "城市代码"
-//            JSONArray cityCodes = (JSONArray) jsonObject.get("城市代码");
-//
-//
-//            for (Object object : cityCodes) {
-//                JSONObject province = (JSONObject) object;
-//
-//                JSONArray cities = (JSONArray) province.get("市");
-//                for (Object c : cities) {
-//                    JSONObject city = (JSONObject) c;
-//                    String cityName = (String) city.get("市名");
-//                    String cityCode = (String) city.get("编码");
-//                    cityCodeMap.put(cityName, cityCode);
-//                }
-//            }
-//            reader.close();
-//        } catch (IOException | ParseException e) {
-//            e.printStackTrace();
-//        }
-//    }
         File file = new File("/Users/leeowen/Projects/weather-project-springboot/package.json");
         String fileContent = null; // Specify the encoding if necessary
         try {
@@ -109,9 +80,6 @@ public class weatherService {
                 com.alibaba.fastjson.JSONObject jsonObject = JSON.parseObject(result);
                 com.alibaba.fastjson.JSONArray forecastArray = jsonObject.getJSONObject("data").getJSONArray("forecast");
                 EntityUtils.consume(entity);
-
-//                    System.out.println(forecastArray);
-//                    List<Forecast> forecasts = new ArrayList<>();
 
                 int count = 0;
                 if (date == null) {
