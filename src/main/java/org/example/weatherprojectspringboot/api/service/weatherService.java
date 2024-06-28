@@ -33,7 +33,7 @@ public class weatherService {
     static final Map<String, String> cityCodeMap = new HashMap<>();
 
     static {
-        File file = new File("/Users/leeowen/Projects/weather-project-springboot/package.json");
+        File file = new File("your-absolute-path");
         String fileContent = null; // Specify the encoding if necessary
         try {
             fileContent = FileUtils.readFileToString(file, "UTF-8"); // try to read file in this format
